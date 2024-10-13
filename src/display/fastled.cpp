@@ -1,7 +1,6 @@
 #include <Wire.h>
-#include "SPI.h"
+//#include "SPI.h"
 #include "mydisplay.h"
-
 
 // Schalter
 const int butLeft = 9;

@@ -20,7 +20,8 @@
 				"ExodiusStudios.comment-anchors",
 				"dzhavat.bracket-pair-toggler",
 				"Ayushh.vscode-anchor",
-				"Wokwi.wokwi-vscode"
+				"Wokwi.wokwi-vscode",
+				"ms-vscode.vscode-serial-monitor"
 			]
 		}
 	},
