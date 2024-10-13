@@ -33,11 +33,13 @@ void setup() {
   pinMode(butRight, INPUT_PULLUP);
   Serial.println("Starting");
   //LEDS.addLeds<NEOPIXEL,DATA_PIN,RGB>(leds,PIXELS_PER_SEGMENT * 7 * PIXELS_DIGITS);
-  FastLED.addLeds<NEOPIXEL, DATA_PIN>(leds, PIXELS_SUM);
+  //FastLED.addLeds<NEOPIXEL, DATA_PIN>(leds, PIXELS_SUM);
   //LEDS.addLeds<WS2812SERIAL,DATA_PIN,RGB>(leds,PIXELS_PER_SEGMENT * 7 * PIXELS_DIGITS);
+   initializeLEDs();
   LEDS.setBrightness(84);
   writeHello((const char*)"GAHH0", RED);
-  FastLED.show();
+  updateLEDs(); 
+  //FastLED.show();
   sortChar("000000", '|', '|', GELB);
   }
 
@@ -53,7 +55,8 @@ void loop() {
       sortChar("000000", '|', '|', GREEN);
       //writeHello("000000");
       Serial.println("Stoppuhr zurückgesetzt");
-      FastLED.show();
+      updateLEDs(); 
+      //FastLED.show();
       previousSerialTime = millis(); // Zurücksetzen der Zeit
       stopwatchRunning = false; // Stoppuhr anhalten
     } else if (input == 's') {

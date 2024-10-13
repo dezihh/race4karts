@@ -1,6 +1,7 @@
 #include "mydisplay.h"
 #include <ctype.h>
 #include <string.h>
+#include <FastLED.h>
 
 // Definition der externen Variablen
 const uint8_t patterns[6] = {
@@ -38,6 +39,21 @@ const byte digits[21] = {
 
 // Globales LED-Array basierend auf der konstanten PIXELS_SUM
 CRGB leds[PIXELS_SUM];
+
+// Funktion zur Initialisierung der LEDs
+void initializeLEDs() {
+    FastLED.addLeds<NEOPIXEL, DATA_PIN, RGB>(leds, PIXELS_SUM);  // LED-Streifen initialisieren
+}
+
+// Funktion zum Einstellen der Helligkeit
+void setLEDBrightness(uint8_t brightness) {
+    FastLED.setBrightness(brightness);  // Helligkeit einstellen
+}
+
+// Funktion zum Aktualisieren der LED-Anzeige
+void updateLEDs() {
+    FastLED.show();  // Aktualisiert die Anzeige der LEDs
+}
 
 void sortChar(const char* alphanumeric, char dotL, char dotR, CRGB pixColo) {
     int length = strlen(alphanumeric);

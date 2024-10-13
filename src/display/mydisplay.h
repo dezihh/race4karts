@@ -24,8 +24,14 @@ const int PIXELS_DIGITS = 6;
 const int PIXELS_EXTRA = 8;
 const int PIXELS_SUM = (PIXELS_PER_SEGMENT * 7 * PIXELS_DIGITS) + PIXELS_EXTRA;
 
+#define DATA_PIN 12     // Pin für die LEDs
+
 extern CRGB leds[PIXELS_SUM]; // Deklaration des globalen LED Arrays
 
+// Funktionsdeklarationen
+void initializeLEDs();
+void updateLEDs();
+void setLEDBrightness(uint8_t brightness);
 void sortChar(const char* alphanumeric, char dotL, char dotR, CRGB pixColo);
 void writeDigit(int index, int val, CRGB pixColo);
 void writePoints(char left, char right, CRGB pixColo);
