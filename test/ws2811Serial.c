@@ -1,3 +1,4 @@
+/* From: https://github.com/PaulStoffregen/WS2812Serial/tree/master */
 #include <WS2812Serial.h>
 
 const int numled = 63;
